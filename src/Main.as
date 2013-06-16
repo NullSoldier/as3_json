@@ -1,8 +1,8 @@
 package 
 {
 	import flash.display.Sprite;
-	import flash.events.Event;
-	import flash.utils.describeType;
+	import flash.utils.getTimer;
+	import flash.system.fscommand;
 	import tests.*;
 	
 	public class Main extends Sprite 
@@ -16,7 +16,9 @@ package
 			trace ("Running all tests");
 			for each (var testSet:TestSet in testSets)
 				testSet.RunTests();
+				
 			trace ("Finished.");
+			fscommand ("quit");
 		}
 	}
 }

@@ -28,13 +28,13 @@ package
 		
 		public static function IsEqual (v1:*, v2:*) : void
 		{
-			if (!v1.IsEqual (v2))
+			if (v1 != v2)
 				throw new Error ("Items must be equal");
 		}
 		
 		public static function IsNotEqual (v1:*, v2:*) : void
 		{
-			if (v1.IsEqual (v2))
+			if (v1 === v2)
 				throw new Error ("Items must not be equal");
 		}
 	}

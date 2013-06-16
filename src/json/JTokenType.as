@@ -2,8 +2,9 @@ package json
 {
 	public class JTokenType
 	{
-		public static var LPAREN:JTokenType = new JTokenType (LPAREN);
-		public static var RPAREN:JTokenType = new JTokenType (RPAREN);
+		public static var LBRACE:JTokenType = new JTokenType (LBRACE);
+		public static var RBRACE:JTokenType = new JTokenType (RBRACE);
+		public static var COLON:JTokenType = new JTokenType (COLON);
 		public static var VALUE:JTokenType = new JTokenType (VALUE);
 		
 		public static var OBJECT:JTokenType = new JTokenType (OBJECT);

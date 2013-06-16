@@ -14,8 +14,8 @@ package tests
 		{
 			var tokens:Vector.<JToken> = JTokenizer.Tokenize ("{}");
 			Assert.HasLength (tokens, 2);
-			Assert.IsEqual (tokens[0].type, JTokenType.LPAREN);
-			Assert.IsEqual (tokens[1].type, JTokenType.RPAREN);
+			Assert.IsEqual (tokens[0].type, JTokenType.LBRACE);
+			Assert.IsEqual (tokens[1].type, JTokenType.RBRACE);
 		}
 		
 		public function ParseNull() : void
@@ -57,7 +57,5 @@ package tests
 			JTokenAssert.ParseError ("}");
 			JTokenAssert.ParseError ("{{}}}");
 		}
-		
-		
 	}
 }

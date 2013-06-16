@@ -3,6 +3,7 @@ package tests
 	import flash.display.Sprite;
 	import flash.events.Event;
 	import flash.utils.describeType;
+	import json.JParseError;
 	
 	public class TestSet
 	{
@@ -26,15 +27,25 @@ package tests
 			trace ("[" + passedCount + "/" + testCount + "] Tests passed.");
 		}
 		
-		private function run (name:String, test:Function) : Boolean
-		{
+		private function run (testName:String, test:Function) : Boolean
+		{			
 			try {
 				test();
 			} catch (e:Error) {
-				trace ("Test '" + name + "' failed: " + e.name + ", " + e.message);
+				if (e is JParseError) {
+					trace (prettyParseError (testName, JParseError (e)))
+				} else {
+					trace ("Test '" + testName + "' failed: " + e.message);
+				}
 				return false;
 			}
 			return true;
+		}
+		
+		private function prettyParseError (testName:String, e:JParseError) : String
+		{
+			return "Test '" + testName + "' failed: " + e.message
+					+ " (line " + e.line + ", col " + e.column;
 		}
 	}
 }
