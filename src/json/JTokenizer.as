@@ -21,9 +21,9 @@ package json
 		
 		//TODO: col and line are currently inaccurate
 		private var data:String;
-		private var pos:int = 0;
 		private var col:int = 0;
 		private var line:int = 0;
+		private var pos:int = 0;
 		private var posStack:Array = [];
 		private var tokens:Vector.<JToken>;
 		
@@ -40,9 +40,9 @@ package json
 				return tokens;
 			
 			tokens = new Vector.<JToken>();
-			return readValue() 
-				? tokens
-				: null;
+			// Start tokenizing the root value
+			readValue();
+			return tokens;
 		}
 		
 		private function readValue() : Boolean
