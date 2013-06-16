@@ -45,7 +45,7 @@ package json
 				: null;
 		}
 		
-		public function readValue() : Boolean
+		private function readValue() : Boolean
 		{
 			var result:Boolean = readObject()
 				|| readTrue()
@@ -61,7 +61,7 @@ package json
 			return true;
 		}
 		
-		public function readObject() : Boolean
+		private function readObject() : Boolean
 		{
 			if (!readLBrace()) {
 				return false;
@@ -75,7 +75,7 @@ package json
 			return true;
 		}
 		
-		public function readKVP() : Boolean
+		private function readKVP() : Boolean
 		{
 			if (!readString())
 				return false;
@@ -87,25 +87,22 @@ package json
 			return true;
 		}
 		
-		public function readString() : Boolean
+		private function readString() : Boolean
 		{
-			//TODO: do it
-			return false;
+			return false; //TODO: do it
 		}
 		
-		public function readNumber() : Boolean
+		private function readNumber() : Boolean
 		{
-			//TODO: do it
-			return false;
+			return false; //TODO: do it
 		}
 		
-		public function readArray() : Boolean
+		private function readArray() : Boolean
 		{
-			//TODO: do it
-			return false;
+			return false; //TODO: do it
 		}
 		
-		public function readColon() : Boolean
+		private function readColon() : Boolean
 		{
 			if (!tryReadDesired (COLON))
 				return false
@@ -114,7 +111,7 @@ package json
 			return true;
 		}
 		
-		public function readTrue() : Boolean
+		private function readTrue() : Boolean
 		{
 			if (!tryReadDesired (TRUE))
 				return false;
@@ -123,7 +120,7 @@ package json
 			return true;
 		}
 		
-		public function readFalse() : Boolean
+		private function readFalse() : Boolean
 		{
 			if (!tryReadDesired (FALSE))
 				return false;
@@ -132,7 +129,7 @@ package json
 			return true;
 		}
 		
-		public function readLBrace() : Boolean
+		private function readLBrace() : Boolean
 		{
 			if (!tryReadDesired (LBRACE))
 				return false;
@@ -141,7 +138,7 @@ package json
 			return true;
 		}
 		
-		public function readRBrace() : Boolean
+		private function readRBrace() : Boolean
 		{
 			if (!tryReadDesired (RBRACE))
 				return false;
@@ -150,7 +147,7 @@ package json
 			return true;
 		}
 		
-		public function readNull() : Boolean
+		private function readNull() : Boolean
 		{
 			if (!tryReadDesired (NULL))
 				return false;
