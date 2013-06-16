@@ -31,7 +31,7 @@ package tests
 			try {
 				test();
 			} catch (e:Error) {
-				trace ("Running test '" + name + "' failed: " + e.name + ", " + e.message);
+				trace ("Test '" + name + "' failed: " + e.name + ", " + e.message);
 				return false;
 			}
 			return true;
